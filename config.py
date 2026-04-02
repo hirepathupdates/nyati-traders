@@ -41,9 +41,12 @@ PROXIMITY_PCT     = 0.005           # ±0.5 % proximity → triggers a signal
 # ---------------------------------------------------------------------------
 # Trading / Risk Parameters
 # ---------------------------------------------------------------------------
-DEFAULT_QUANTITY  = 1               # Shares per order
-STOP_LOSS_PCT     = 0.010           # 1.0 % stop-loss below entry
-TARGET_PCT        = 0.015           # 1.5 % profit target above entry
+# Intraday margin is estimated at 25 % of the stock price (NRML/MIS approx).
+# The system uses only 90 % of available funds as a safety buffer.
+INTRADAY_MARGIN_PCT = 0.25          # estimated MIS margin as % of stock price
+FUNDS_USAGE_PCT     = 0.90          # use 90 % of available cash (safety buffer)
+STOP_LOSS_PCT       = 0.010         # 1.0 % stop-loss below entry
+TARGET_PCT          = 0.015         # 1.5 % profit target above entry
 
 # ---------------------------------------------------------------------------
 # Funds / Margin Refresh
